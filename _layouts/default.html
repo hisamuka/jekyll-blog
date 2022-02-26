@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    
+    <!-- Já existe um arquivo de estilo style.css (singular)
+        no Jekyll. Então, não podemos usar o mesmo nome senão
+        ele vai pensar que é este arquivo.
+    -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    {% include navigation.html %}
+    {{ content }}
+</body>
+
+</html>

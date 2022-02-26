@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<h1>{{ page.name }}</h1>
+<h2>{{ page.position }}</h2>
+
+{{ content }}
+
+<h2>Posts</h2>
+<ul>
+    <!-- Só funciona pq foi declarada uma collection -->
+    <!-- {% for author in site.authors %}
+        <li>{{ author.short_name }}</li>
+    {% endfor %} -->
+
+    {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+    {% for post in filtered_posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
